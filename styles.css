@@ -6,59 +6,87 @@
 }
 
 body {
-    font-family: 'Poppins', sans-serif; /* Modern font (add via Google Fonts in HTML) */
+    font-family: 'Poppins', sans-serif;
     line-height: 1.6;
-    background-color: #f4f4f4;
-    color: #333;
+    background-color: #F5E7D1; /* Beige background inspired by the image */
+    color: #3A2E2A; /* Dark brown text for contrast */
 }
 
 /* Navbar Styling */
 .navbar {
-    background: linear-gradient(90deg, #1a1a1a, #343a40); /* Gradient effect */
+    background: linear-gradient(90deg, #B84A39, #8B3A2E); /* Red sandstone gradient */
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
 
 .navbar-brand, .nav-link {
-    color: #fff !important;
+    color: #F5E7D1 !important; /* Beige text for navbar */
     transition: color 0.3s ease;
 }
 
 .nav-link:hover {
-    color: #00d4ff !important; /* Bright cyan hover */
-    transform: translateY(-2px); /* Slight lift */
+    color: #87CEEB !important; /* Subtle sky blue for hover */
+    transform: translateY(-2px);
 }
 
 /* Hero Section */
 .hero {
-    background: linear-gradient(135deg, #6b48ff, #00ddeb); /* Vibrant gradient */
+    background-image: url('background.JPG'); /* New background image */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     min-height: 100vh;
     position: relative;
     overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding-left: 5rem;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4); /* Slightly lighter overlay to match the sunlit feel */
+    z-index: 1;
+}
+
+.hero .container {
+    position: relative;
+    z-index: 2;
+    text-align: left;
 }
 
 .hero h1 {
-    font-size: 3.5rem;
+    font-size: 4.5rem; /* Unchanged */
     font-weight: 700;
-    animation: fadeInDown 1s ease;
+    color: #F5E7D1; /* Beige text for better contrast */
+    margin-bottom: 1rem;
+    animation: none;
 }
 
 .hero p {
-    font-size: 1.5rem;
+    font-size: 1.8rem;
+    color: #F5E7D1; /* Beige text */
     animation: fadeInUp 1.2s ease;
 }
 
-.hero .btn {
-    background-color: #ff6f61; /* Coral color */
-    border: none;
-    padding: 12px 30px;
-    font-size: 1.2rem;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+/* Typewriter Animation */
+.typewriter {
+    display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: 3px solid #F5E7D1; /* Beige cursor to match the text */
+    animation: blinkCursor 0.7s step-end infinite;
 }
 
-.hero .btn:hover {
-    transform: scale(1.05);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-    background-color: #ff4f3f;
+@keyframes blinkCursor {
+    50% {
+        border-color: transparent;
+    }
 }
 
 /* Section Styling */
@@ -71,7 +99,7 @@ h2 {
     font-size: 2.5rem;
     font-weight: 600;
     margin-bottom: 40px;
-    color: #1a1a1a;
+    color: #B84A39; /* Red sandstone color for headings */
     position: relative;
 }
 
@@ -79,7 +107,7 @@ h2::after {
     content: '';
     width: 50px;
     height: 4px;
-    background: #ff6f61;
+    background: #8B3A2E; /* Darker red sandstone for the underline */
     position: absolute;
     bottom: -10px;
     left: 50%;
@@ -88,108 +116,190 @@ h2::after {
 
 /* About Section */
 #about {
-    background: #fff;
+    background: #FFF8E7; /* Light beige background - unchanged */
     border-radius: 20px;
     margin: 0 20px;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 }
 
+#about h2 {
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: #B84A39; /* Red sandstone color for headings - unchanged */
+    position: relative;
+    text-align: left; /* Align left to match Restauranty layout */
+}
+
+#about h2::after {
+    content: '';
+    width: 50px;
+    height: 4px;
+    background: #8B3A2E; /* Darker red sandstone for the underline - unchanged */
+    position: absolute;
+    bottom: -10px;
+    left: 0; /* Align underline to the left to match text alignment */
+    transform: none; /* Remove centering transform */
+}
+
+#about .about-subheading {
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: #3A2E2A; /* Dark brown for subheading */
+    text-align: left;
+}
+
 #about p {
     font-size: 1.2rem;
-    max-width: 600px;
-    margin: 0 auto;
+    color: #3A2E2A; /* Dark brown text - unchanged */
+    text-align: left; /* Align left to match Restauranty layout */
     animation: fadeIn 1.5s ease;
 }
 
-/* Projects Section */
-#projects {
-    background: linear-gradient(to bottom, #f8f9fa, #e9ecef);
-}
-
-.card {
-    border: none;
-    border-radius: 15px;
-    overflow: hidden;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    background: #fff;
-}
-
-.card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
-}
-
-.card-title a {
-    color: #6b48ff;
-    text-decoration: none;
-    font-weight: 600;
-    transition: color 0.3s ease;
-}
-
-.card-title a:hover {
-    color: #ff6f61;
-}
-
-.card-text {
-    color: #666;
-}
-
-/* Project Pages Styling */
-.project-img {
+#about .about-image {
+    width: 100%;
+    height: auto;
     border-radius: 10px;
-    transition: transform 0.5s ease, filter 0.3s ease;
+    object-fit: cover;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
 }
 
-.project-img:hover {
-    transform: scale(1.1);
-    filter: brightness(1.1);
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    #about .about-image {
+        margin-top: 20px; /* Add spacing on smaller screens */
+    }
+    #about h2 {
+        font-size: 2rem;
+    }
+    #about .about-subheading {
+        font-size: 1.2rem;
+    }
+    #about p {
+        font-size: 1rem;
+    }
+}
+}
+/* Work Section */
+#Work {
+    background: #3A2E2A; /* Dark brown background for contrast - unchanged in code, but assuming it’s white in practice */
 }
 
-.btn-primary {
-    background-color: #6b48ff;
-    border: none;
-    padding: 10px 25px;
-    border-radius: 25px;
-    transition: background-color 0.3s ease, transform 0.3s ease;
+.work-section {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.btn-primary:hover {
-    background-color: #5438cc;
-    transform: scale(1.05);
+.work-image {
+    width: 100%;
+    height: 300px; /* Fixed height to match your original design */
+    object-fit: cover; /* Ensures image fills the space without distortion */
+    display: block;
+    transition: transform 0.3s ease;
 }
 
-/* Modal Styling */
-.modal-content {
-    border-radius: 15px;
-    border: none;
-    animation: slideIn 0.4s ease;
+.work-title {
+    color: #3A2E2A; /* Dark brown for visibility on white background, matches palette */
+    font-size: 1.5rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    text-align: center;
+    margin-top: 10px;
+    transition: color 0.3s ease; /* Smooth color transition on hover - unchanged */
 }
 
-.modal-header {
-    background: #6b48ff;
-    color: #fff;
-    border-radius: 15px 15px 0 0;
+.work-section:hover {
+    transform: scale(1.05); /* Pop-up effect with scale instead of translateY - unchanged */
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3); /* Shadow for depth - unchanged */
 }
 
-.modal-body {
-    font-size: 1.1rem;
+.work-section:hover .work-image {
+    transform: scale(1.1); /* Slight zoom on image - unchanged */
 }
 
+.work-section:hover .work-title {
+    color: #B84A39; /* Red sandstone color on hover for text - unchanged */
+}
 /* Contact Section */
-#contact {
-    background: #343a40;
-    color: #fff;
-    border-radius: 20px 20px 0 0;
+.contact-section {
+    background-color: #FFF8E7; /* Light beige background */
+    color: #3A2E2A; /* Dark brown text */
+    padding: 50px 0;
+    text-align: center;
+    font-family: 'Serif', serif;
 }
 
-#contact a {
-    color: #00ddeb;
+.contact-section .container {
+    width: 60%;
+    margin: 0 auto;
+}
+
+.contact-section h2 {
+    font-size: 36px;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+.contact-section p {
+    font-size: 16px;
+    margin-bottom: 15px;
+}
+
+.contact-section .form-group {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+}
+
+.contact-section input,
+.contact-section textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+    border: 1px solid #3A2E2A;
+    background: #F5E7D1; /* Beige input background */
+    font-size: 14px;
+    color: #3A2E2A;
+}
+
+.contact-section textarea {
+    height: 120px;
+}
+
+.contact-section button {
+    background: transparent;
+    color: #3A2E2A;
+    padding: 10px 20px;
+    border: 1px solid #3A2E2A;
+    cursor: pointer;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.contact-section button:hover {
+    background: #B84A39; /* Red sandstone on hover */
+    color: #F5E7D1; /* Beige text */
+}
+
+.social-links {
+    margin-top: 20px;
+}
+
+.social-links a {
+    color: #3A2E2A;
+    font-size: 20px;
+    margin: 0 10px;
     text-decoration: none;
-    transition: color 0.3s ease;
 }
 
-#contact a:hover {
-    color: #ff6f61;
+.social-links a:hover {
+    color: #B84A39; /* Red sandstone on hover */
+}
+
+.footer-text {
+    font-size: 12px;
+    margin-top: 20px;
 }
 
 /* Animations */
@@ -215,7 +325,19 @@ h2::after {
 
 /* Responsive Adjustments */
 @media (max-width: 768px) {
-    .hero h1 { font-size: 2.5rem; }
-    .hero p { font-size: 1.2rem; }
-    .card { margin: 0 10px; }
+    .hero {
+        padding-left: 2rem;
+    }
+    .hero h1 { 
+        font-size: 2.5rem; 
+    }
+    .hero p { 
+        font-size: 1.2rem; 
+    }
+    .work-section {
+        height: 200px;
+    }
+    .work-title {
+        font-size: 1.2rem;
+    }
 }
