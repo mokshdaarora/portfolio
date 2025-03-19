@@ -1,0 +1,221 @@
+/* Reset defaults */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif; /* Modern font (add via Google Fonts in HTML) */
+    line-height: 1.6;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+/* Navbar Styling */
+.navbar {
+    background: linear-gradient(90deg, #1a1a1a, #343a40); /* Gradient effect */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.navbar-brand, .nav-link {
+    color: #fff !important;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+    color: #00d4ff !important; /* Bright cyan hover */
+    transform: translateY(-2px); /* Slight lift */
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(135deg, #6b48ff, #00ddeb); /* Vibrant gradient */
+    min-height: 100vh;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    animation: fadeInDown 1s ease;
+}
+
+.hero p {
+    font-size: 1.5rem;
+    animation: fadeInUp 1.2s ease;
+}
+
+.hero .btn {
+    background-color: #ff6f61; /* Coral color */
+    border: none;
+    padding: 12px 30px;
+    font-size: 1.2rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hero .btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    background-color: #ff4f3f;
+}
+
+/* Section Styling */
+section {
+    padding: 80px 0;
+    position: relative;
+}
+
+h2 {
+    font-size: 2.5rem;
+    font-weight: 600;
+    margin-bottom: 40px;
+    color: #1a1a1a;
+    position: relative;
+}
+
+h2::after {
+    content: '';
+    width: 50px;
+    height: 4px;
+    background: #ff6f61;
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* About Section */
+#about {
+    background: #fff;
+    border-radius: 20px;
+    margin: 0 20px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+#about p {
+    font-size: 1.2rem;
+    max-width: 600px;
+    margin: 0 auto;
+    animation: fadeIn 1.5s ease;
+}
+
+/* Projects Section */
+#projects {
+    background: linear-gradient(to bottom, #f8f9fa, #e9ecef);
+}
+
+.card {
+    border: none;
+    border-radius: 15px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background: #fff;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+.card-title a {
+    color: #6b48ff;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.card-title a:hover {
+    color: #ff6f61;
+}
+
+.card-text {
+    color: #666;
+}
+
+/* Project Pages Styling */
+.project-img {
+    border-radius: 10px;
+    transition: transform 0.5s ease, filter 0.3s ease;
+}
+
+.project-img:hover {
+    transform: scale(1.1);
+    filter: brightness(1.1);
+}
+
+.btn-primary {
+    background-color: #6b48ff;
+    border: none;
+    padding: 10px 25px;
+    border-radius: 25px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #5438cc;
+    transform: scale(1.05);
+}
+
+/* Modal Styling */
+.modal-content {
+    border-radius: 15px;
+    border: none;
+    animation: slideIn 0.4s ease;
+}
+
+.modal-header {
+    background: #6b48ff;
+    color: #fff;
+    border-radius: 15px 15px 0 0;
+}
+
+.modal-body {
+    font-size: 1.1rem;
+}
+
+/* Contact Section */
+#contact {
+    background: #343a40;
+    color: #fff;
+    border-radius: 20px 20px 0 0;
+}
+
+#contact a {
+    color: #00ddeb;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+#contact a:hover {
+    color: #ff6f61;
+}
+
+/* Animations */
+@keyframes fadeInDown {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideIn {
+    from { opacity: 0; transform: translateY(50px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .hero h1 { font-size: 2.5rem; }
+    .hero p { font-size: 1.2rem; }
+    .card { margin: 0 10px; }
+}
